@@ -32,6 +32,14 @@ Target(
 )
 
 Target(
+	name = 'nextpnr-xilinx',
+	sources = [ 'nextpnr' ],
+	dependencies = [ 'python3', 'nextpnr-bba', 'prjxray-bba'],
+	resources = [ 'python3' ],
+	package = 'xilinx',
+)
+
+Target(
 	name = 'nextpnr-ecp5',
 	sources = [ 'nextpnr' ],
 	dependencies = [ 'python3', 'nextpnr-bba', 'prjtrellis-bba', 'python3-native'],
@@ -76,6 +84,14 @@ SourceLocation(
 	vcs = 'git',
 	location = 'https://github.com/YosysHQ/icestorm',
 	revision = 'origin/main',
+	license_file = 'COPYING',
+)
+
+SourceLocation(
+	name = 'prjxray',
+	vcs = 'git',
+	location = 'https://github.com/YosysHQ/prjxray',
+	revision = 'origin/master',
 	license_file = 'COPYING',
 )
 
@@ -126,6 +142,12 @@ Target(
 )
 
 Target(
+	name = 'prjxray',
+	sources = [ 'prjxray' ],
+	package = 'xilinx',
+)
+
+Target(
 	name = 'prjtrellis',
 	sources = [ 'prjtrellis' ],
 	package = 'ecp5',
@@ -158,6 +180,13 @@ Target(
 	sources = [ 'nextpnr' ],
 	dependencies = [ 'icestorm' ],
 	gitrev = [ ('nextpnr', 'ice40') ],
+	build_native = True,
+)
+
+Target(
+	name = 'prjxray-bba',
+	sources = [ 'prjxray', 'nextpnr' ],
+	gitrev = [ ('nextpnr', 'xilinx') ],
 	build_native = True,
 )
 

@@ -17,6 +17,7 @@ Target(
         'nextpnr-machxo2',
         'nextpnr-nexus',
         'nextpnr-himbaechel',
+        'nextpnr-xilinx',
         'icestorm',
         'prjtrellis',
         'prjpeppercorn',
