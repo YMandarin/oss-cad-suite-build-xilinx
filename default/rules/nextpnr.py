@@ -90,7 +90,7 @@ SourceLocation(
 SourceLocation(
 	name = 'prjxray',
 	vcs = 'git',
-	location = 'https://github.com/YosysHQ/prjxray',
+	location = 'https://github.com/f4pga/prjxray',
 	revision = 'origin/master',
 	license_file = 'COPYING',
 )
