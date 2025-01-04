@@ -4,7 +4,8 @@ from src.base import SourceLocation, Target
 SourceLocation(
 	name = 'nextpnr',
 	vcs = 'git',
-	location = 'https://github.com/YosysHQ/nextpnr',
+#	location = 'https://github.com/YosysHQ/nextpnr',
+	location = 'https://github.com/openXC7/nextpnr-xilinx',
 	revision = 'origin/main',
 	license_file = 'COPYING',
 )
