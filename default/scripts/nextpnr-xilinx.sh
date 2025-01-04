@@ -1,4 +1,4 @@
-cd nextpnr
+cd nextpnr-xilinx
 build_gui="OFF"
 if [ ${ARCH} == 'linux-x64' ] || [ ${ARCH} == 'windows-x64' ] || [ ${ARCH} == 'darwin-x64' ] || [ ${ARCH} == 'darwin-arm64' ]; then
       build_gui="ON"

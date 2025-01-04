@@ -4,9 +4,25 @@ from src.base import SourceLocation, Target
 SourceLocation(
 	name = 'nextpnr',
 	vcs = 'git',
+	location = 'https://github.com/YosysHQ/nextpnr',
+	revision = 'origin/master',
+	license_file = 'COPYING',
+)
+
+SourceLocation(
+	name = 'nextpnr-xilinx',
+	vcs = 'git',
 #	location = 'https://github.com/YosysHQ/nextpnr',
 	location = 'https://github.com/openXC7/nextpnr-xilinx',
 	revision = 'origin/main',
+	license_file = 'COPYING',
+)
+
+SourceLocation(
+	name = 'nextpnr-openxc7',
+	vcs = 'git',
+	location = 'https://github.com/openXC7/nextpnr-xilinx',
+	revision = 'origin/stable-backports',
 	license_file = 'COPYING',
 )
 
@@ -34,7 +50,7 @@ Target(
 
 Target(
 	name = 'nextpnr-xilinx',
-	sources = [ 'nextpnr' ],
+	sources = [ 'nextpnr-xilinx' ],
 	dependencies = [ 'python3', 'nextpnr-bba', 'prjxray-bba'],
 	resources = [ 'python3' ],
 	package = 'xilinx',
@@ -93,7 +109,7 @@ SourceLocation(
 	vcs = 'git',
 	location = 'https://github.com/f4pga/prjxray',
 	revision = 'origin/master',
-	license_file = 'COPYING',
+	license_file = 'LICENSE',
 )
 
 SourceLocation(
@@ -186,7 +202,7 @@ Target(
 
 Target(
 	name = 'prjxray-bba',
-	sources = [ 'prjxray', 'nextpnr' ],
+	sources = [ 'prjxray', 'nextpnr-xilinx' ],
 	gitrev = [ ('nextpnr', 'xilinx') ],
 	build_native = True,
 )
