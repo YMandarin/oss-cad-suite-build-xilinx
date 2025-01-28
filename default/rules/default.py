@@ -22,6 +22,7 @@ Target(
         'prjtrellis',
         'prjpeppercorn',
         'prjoxide',
+        'prjxray',
         'apicula',
         'openfpgaloader',
         'aiger',

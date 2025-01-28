@@ -51,7 +51,8 @@ Target(
 Target(
 	name = 'nextpnr-xilinx',
 	sources = [ 'nextpnr-xilinx' ],
-	dependencies = [ 'python3', 'nextpnr-bba', 'prjxray-bba'],
+#	dependencies = [ 'python3', 'nextpnr-bba', 'prjxray-bba'],
+	dependencies = [ 'python3', 'nextpnr-bba'],
 	resources = [ 'python3' ],
 	package = 'xilinx',
 )
@@ -107,7 +108,8 @@ SourceLocation(
 SourceLocation(
 	name = 'prjxray',
 	vcs = 'git',
-	location = 'https://github.com/f4pga/prjxray',
+#	location = 'https://github.com/f4pga/prjxray',
+	location = 'https://github.com/openXC7/prjxray',
 	revision = 'origin/master',
 	license_file = 'LICENSE',
 )
@@ -161,6 +163,10 @@ Target(
 Target(
 	name = 'prjxray',
 	sources = [ 'prjxray' ],
+	dependencies = [ 'python3', 'python3-native' ],
+	resources = [ 'python3' ],
+	patches = [ 'python3_package.sh' ],
+#	build_native = True,
 	package = 'xilinx',
 )
 
