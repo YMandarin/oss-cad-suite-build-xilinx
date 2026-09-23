@@ -5,7 +5,7 @@ SourceLocation(
 	name = 'nextpnr',
 	vcs = 'git',
 	location = 'https://github.com/YosysHQ/nextpnr',
-	revision = 'origin/master',
+	revision = 'origin/main',
 	license_file = 'COPYING',
 )
 
@@ -15,14 +15,6 @@ SourceLocation(
 #	location = 'https://github.com/YosysHQ/nextpnr',
 	location = 'https://github.com/openXC7/nextpnr-xilinx',
 	revision = 'origin/main',
-	license_file = 'COPYING',
-)
-
-SourceLocation(
-	name = 'nextpnr-openxc7',
-	vcs = 'git',
-	location = 'https://github.com/openXC7/nextpnr-xilinx',
-	revision = 'origin/stable-backports',
 	license_file = 'COPYING',
 )
 
