@@ -1,10 +1,5 @@
 cd prjxray
 
-./download-latest-db.sh
-
-mkdir -p ${OUTPUT_DIR}${INSTALL_PREFIX}/share/prjxray-db/
-cp -r database/* ${OUTPUT_DIR}${INSTALL_PREFIX}/share/prjxray-db/
-
 sed -i -re "s,cmake ,cmake  -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE} -DBUILD_PYTHON=ON -DPython3_INCLUDE_DIR=${BUILD_DIR}/python3${INSTALL_PREFIX}/include/python3.11 -DPython3_LIBRARY=${BUILD_DIR}/python3${INSTALL_PREFIX}/lib/libpython3.11${SHARED_EXT}  , " \
 	Makefile
 make INSTALL_DIR=${OUTPUT_DIR} DESTDIR=${OUTPUT_DIR} -j${NPROC} build

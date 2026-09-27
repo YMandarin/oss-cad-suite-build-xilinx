@@ -81,7 +81,7 @@ Target(
 Target(
 	name = 'nextpnr-himbaechel-xilinx',
 	sources = [ 'nextpnr-xc7' ],
-	dependencies = [ 'python3', 'python3-native', 'prjxray'],
+	dependencies = [ 'python3', 'python3-native', 'prjxray-db'],
 	patches = [ 'python3_package.sh' ],
 	resources = [ 'python3' ],
 )
@@ -103,6 +103,15 @@ SourceLocation(
 	revision = 'origin/master',
 	license_file = 'LICENSE',
 )
+
+SourceLocation(
+	name = 'prjxray-db',
+	vcs = 'git',
+	location = 'https://github.com/openXC7/prjxray-db',
+	revision = 'origin/master',
+	license_file = 'LICENSE',
+)
+
 
 SourceLocation(
 	name = 'prjtrellis',
@@ -157,6 +166,12 @@ Target(
 	resources = [ 'python3' ],
 	patches = [ 'python3_package.sh' ],
 #	build_native = True,
+	package = 'xilinx',
+)
+
+Target(
+	name = 'prjxray-db',
+	sources = [ 'prjxray-db' ],
 	package = 'xilinx',
 )
 

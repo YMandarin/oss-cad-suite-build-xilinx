@@ -24,6 +24,7 @@ Target(
         'prjpeppercorn',
         'prjoxide',
         'prjxray',
+        'prjxray-db',
         'apicula',
         'openfpgaloader',
         'aiger',

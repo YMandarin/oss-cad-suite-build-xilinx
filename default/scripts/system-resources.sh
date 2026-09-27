@@ -8,7 +8,11 @@ if [ ${ARCH_BASE} == 'linux' ]; then
     mkdir -p ${OUTPUT_DIR}${INSTALL_PREFIX}/lib/dri
 if [ ${ARCH} == 'linux-x64' ]; then
     cp /usr/lib/${CROSS_NAME}/dri/libdril_dri.so ${OUTPUT_DIR}${INSTALL_PREFIX}/lib/dri/.
-    cp /usr/lib/${CROSS_NAME}/libgallium-26.0.3-1ubuntu1.so ${OUTPUT_DIR}${INSTALL_PREFIX}/lib/.
+    
+    GALLIUM_SO=$(basename "$(ls /usr/lib/${CROSS_NAME}/libgallium-*.so | head -1)")
+    echo "Using libgallium: ${GALLIUM_SO}"
+    cp "/usr/lib/${CROSS_NAME}/${GALLIUM_SO}" "${OUTPUT_DIR}${INSTALL_PREFIX}/lib/."
+
     pushd ${OUTPUT_DIR}${INSTALL_PREFIX}/lib/dri
     ln -sf libdril_dri.so apple_dri.so
     ln -sf libdril_dri.so armada-drm_dri.so
