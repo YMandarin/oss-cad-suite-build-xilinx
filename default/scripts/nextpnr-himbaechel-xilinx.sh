@@ -16,6 +16,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DCMAK
 
 make -C build DESTDIR=${OUTPUT_DIR} -j${NPROC} install
 
+# add bbasm and uarch tools 
 cp ./build/bba/bbasm ${OUTPUT_DIR}${INSTALL_PREFIX}/bin/bbasm-xilinx${EXE}
 
 share="${OUTPUT_DIR}${INSTALL_PREFIX}/share/nextpnr/himbaechel"
@@ -28,3 +29,11 @@ cp -r himbaechel/himbaechel_dbgen "$share/"
 cp himbaechel/uarch/xilinx/constids.inc "${OUTPUT_DIR}${INSTALL_PREFIX}/lib/"
 
 ${STRIP} ${OUTPUT_DIR}${INSTALL_PREFIX}/bin/nextpnr-himbaechel-xilinx${EXE}
+
+# add the shim to make nextpnr-himbaechel-xilinx available as nextpnr-xilinx
+SHIM="${OUTPUT_DIR}${INSTALL_PREFIX}/bin/nextpnr-xilinx" 
+install -m755 .github/scripts/nextpnr-xilinx-shim.sh "$SHIM"
+sed 's|nextpnr-himbaechel|nextpnr-himbaechel-xilinx|g' "$SHIM" > "$SHIM.new"
+mv "$SHIM.new" "$SHIM"
+chmod 755 "$SHIM"
+
