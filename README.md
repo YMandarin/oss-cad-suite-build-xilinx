@@ -165,6 +165,21 @@ ARM64 based Linux devices using 64bit CPU as in Raspberry Pi 4,5 and 400 (with 6
 
 To be able to build OSS CAD Suite yourself, you need to install `docker` (please note this only works on x64 platforms or under rosetta on macos-arm) and `python 3.6` or higher, with the `click` library.
 
+### Build the Docker Container
+
+You have to first build the necessary docker-container, which has different dependencies from the yosysHQ [pre-built image](https://hub.docker.com/layers/yosyshq/cross-linux-x64/4.0):
+
+```
+cd docker/cross-<arch>
+./build.sh
+```
+e.g. for linux-x64:
+```
+cd docker/cross-linux-x64
+./build.sh
+```
+
+### Build the Archive
 
 After that just running ```./builder.py``` should work fine.
 

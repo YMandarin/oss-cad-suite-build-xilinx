@@ -18,6 +18,7 @@ Target(
         'nextpnr-nexus',
         'nextpnr-himbaechel',
         'nextpnr-himbaechel-xilinx',
+        'fpga-as',
         'icestorm',
         'prjtrellis',
         'prjpeppercorn',
