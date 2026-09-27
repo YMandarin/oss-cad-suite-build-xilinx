@@ -93,3 +93,18 @@ Target(
 	sources = [ 'libusb', 'libftdi', 'dfu-util', 'ecpdap', 'ecpprog', 'fujprog', 'openocd', 'iceprogduino', 'icesprog' ],
 	package = 'programmers',
 )
+
+# xilinx fpga-assembler
+SourceLocation(
+	name = 'fpga-as',
+	vcs = 'git',
+	location = 'https://github.com/lromor/fpga-assembler',
+	revision = 'origin/main',
+	no_submodules = True,
+)
+
+Target(
+	name = 'fpga-as',
+	sources = [ 'fpga-as' ],
+	package = 'xilinx',
+)

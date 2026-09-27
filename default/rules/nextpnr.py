@@ -10,10 +10,9 @@ SourceLocation(
 )
 
 SourceLocation(
-	name = 'nextpnr-xilinx',
+	name = 'nextpnr-xc7',
 	vcs = 'git',
-#	location = 'https://github.com/YosysHQ/nextpnr',
-	location = 'https://github.com/openXC7/nextpnr-xilinx',
+	location = 'https://github.com/openXC7/nextpnr',
 	revision = 'origin/main',
 	license_file = 'COPYING',
 )
@@ -38,15 +37,6 @@ Target(
 	dependencies = [ 'python3', 'nextpnr-bba', 'icestorm-bba', 'python3-native'],
 	resources = [ 'python3' ],
 	package = 'ice40',
-)
-
-Target(
-	name = 'nextpnr-xilinx',
-	sources = [ 'nextpnr-xilinx' ],
-#	dependencies = [ 'python3', 'nextpnr-bba', 'prjxray-bba'],
-	dependencies = [ 'python3', 'nextpnr-bba'],
-	resources = [ 'python3' ],
-	package = 'xilinx',
 )
 
 Target(
@@ -84,6 +74,14 @@ Target(
 	name = 'nextpnr-himbaechel',
 	sources = [ 'nextpnr' ],
 	dependencies = [ 'python3', 'nextpnr-bba', 'apicula-bba', 'gatemate-bba', 'python3-native'],
+	patches = [ 'python3_package.sh' ],
+	resources = [ 'python3' ],
+)
+
+Target(
+	name = 'nextpnr-himbaechel-xilinx',
+	sources = [ 'nextpnr-xc7' ],
+	dependencies = [ 'python3', 'python3-native', 'prjxray'],
 	patches = [ 'python3_package.sh' ],
 	resources = [ 'python3' ],
 )
@@ -195,13 +193,6 @@ Target(
 	sources = [ 'nextpnr' ],
 	dependencies = [ 'icestorm' ],
 	gitrev = [ ('nextpnr', 'ice40') ],
-	build_native = True,
-)
-
-Target(
-	name = 'prjxray-bba',
-	sources = [ 'prjxray', 'nextpnr-xilinx' ],
-	gitrev = [ ('nextpnr', 'xilinx') ],
 	build_native = True,
 )
 

@@ -22,6 +22,10 @@ RUN set -e -x ;\
         libboost-thread-dev \
         libboost-iostreams-dev \
         libboost-program-options-dev \
+        libboost-all-dev \
+        gfortran \
+        libopenblas-dev \
+        libopenblas64-dev \
         libeigen3-dev \
         libffi-dev \
         libftdi1-dev \

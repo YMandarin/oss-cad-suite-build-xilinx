@@ -58,6 +58,7 @@ Contact us at contact@yosyshq.com to arrange a free evaluation license.
  * [Z3](https://github.com/Z3Prover/z3) SMT solver
  * [Bitwuzla](https://github.com/bitwuzla/bitwuzla) SMT solver
  * [rIC3](https://github.com/gipsyh/rIC3) SMT solver
+ * [fpga-as](https://github.com/lromor/fpga-assembler) Assembler for xilinx 7-series to convert FASM into bitstream
 
 ### PnR (Place and Route)
  * [nextpnr](https://github.com/YosysHQ/nextpnr) a portable FPGA place and route tool (generic, ice40, ecp5, machxo2, nexus, gowin)
@@ -66,6 +67,8 @@ Contact us at contact@yosyshq.com to arrange a free evaluation license.
  * [Project Oxide](https://github.com/gatecat/prjoxide) tools for working with Lattice Nexus bitstreams
  * [Project Apicula](https://github.com/YosysHQ/apicula) tools for working with Gowin bitstreams
  * [Project Peppercorn](https://github.com/YosysHQ/prjpeppercorn) tools for working with Cologne Chip GateMate bitstreams
+ * [openXC7 nextpnr](https://github.com/openXC7/nextpnr) (**nextpnr-himbaechel-xilinx**) a version of nextpnr adapted for xilinx 7-series FPGAs
+ * [Project XRay](https://github.com/openXC7/prjxray) tools for working with xilinx 7-series bitstreams
  
 ### FPGA board programming tools
  * [openFPGALoader](https://github.com/trabucayre/openFPGALoader) universal utility for programming FPGA
